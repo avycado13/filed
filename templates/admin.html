@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Panel</title>
+</head>
+<body>
+    <h1>Admin Panel</h1>
+    <h2>Update User Role</h2>
+    <form method="post">
+        <label for="user_id">User ID:</label>
+        <input type="text" id="user_id" name="user_id">
+        <label for="role_name">Role:</label>
+        <input type="text" id="role_name" name="role_name">
+        <select id="role_name">
+            <option value="admin">Admin</option>
+            <option value="user">User</option>
+        </select>
+        <input type="submit" value="Assign Role">
+    </form>
+    <h2>All Users</h2>
+    <ul>
+        {% for user in users %}
+            <li>{{ user.id }}: {{ user.roles }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
